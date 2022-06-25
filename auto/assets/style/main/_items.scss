@@ -1,0 +1,232 @@
+.items-container{
+  .item{
+    height: 200px;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    margin: 30px 0 0;
+    &:hover{
+      .name{
+        text-decoration: underline;
+        color: #6b8dbd;
+      }
+      .options{
+        opacity: 1;
+      }
+    }
+    .content{
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      .name, .desc{
+        word-wrap: break-word;
+      }
+      .name{
+        font-size: 20px;
+        margin: 0 0 6px 0;
+      }
+      .desc{
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .price{
+        font-size: 20px;
+        margin-left: 20px;
+        white-space: nowrap;
+      }
+    }
+    .options{
+      background: rgba($color: #fff, $alpha: .8);
+      backdrop-filter: blur(10px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 12px;
+      opacity: 0;
+      transition: .1s;
+      padding: 0 5px;
+      border-bottom-left-radius: 5px;
+      a{
+        display: inline-block;
+        padding: 5px;
+        text-decoration: none;
+      }
+      :last-child{
+        color: red !important;
+      }
+    }
+  }
+}
+
+
+
+.img-carousel{
+  position: relative;
+  background: #000;
+  min-width: 300px;
+  height: inherit;
+  overflow: hidden;
+  &:hover{
+    .arrows-container{
+      .arrow-container{
+        opacity: .5;
+      }
+    }
+  }
+  .img-viewport{
+    height: 100%;
+    display: flex;
+    position: relative;
+    .img-cont{
+      height: inherit;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      .img-bg{
+        cursor: pointer;
+        width: 100%;
+        height: inherit;
+        backdrop-filter: blur(20px) brightness(90%);
+        display: flex;
+        justify-content: center;
+        background-size: contain !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+      }
+    }
+  }
+  .navigation{
+    position: absolute;
+    z-index: 1;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    input{
+      display: none;
+      &:checked + label{
+        opacity: 1;
+      }
+    }
+    input + label{
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      border: 1px solid rgba($color: #000000, $alpha: .5);
+      opacity: 0.5;
+      border-radius: 50%;
+      margin: 0 3px;
+    }
+  }
+  .arrows-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .arrow-container{
+      position: absolute;
+      z-index: 1;
+      cursor: pointer;
+      width: 24px;
+      height: 60px;
+      background: #fff;
+      opacity: 0;
+      transition: .1s;
+      // &.left{
+        
+      // }
+      &.right{
+        transform: rotate(180deg);
+        right: 0;
+      }
+      &:hover{
+        opacity: .9;
+      }
+      .arrow-cont{
+        position: relative;
+        top: 50%;
+        transform: translate(-10%, -50%);
+        .arrow{
+          margin: 0 auto;
+          width: 3px;
+          height: 20px;
+          background: #555;
+          &:nth-child(1){
+            transform-origin: bottom;
+            transform: rotate(12deg);
+            margin-bottom: -1px;
+          }
+          &:nth-child(2){
+            transform-origin: top;
+            transform: rotate(-12deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (hover: none) {
+  .items-container{
+    .item{
+      &:hover{
+        .name{
+          text-decoration: none;
+          color: #000;
+        }
+      }
+      .options{
+        opacity: 1;
+      }
+    }
+  }
+  
+  .img-carousel{
+    .arrows-container{
+      .arrow-container{
+        opacity: .5;
+        &:hover{
+          opacity: .5;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1379px) {
+  .items-container{
+    .item{
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  .items-container{
+    .item{
+      max-width: 500px;
+      height: 90vw;
+      max-height: 468px;
+      display: block;
+      .img-carousel{
+        height: 70.5%;
+        width: auto;
+      }
+      .content{
+        padding: 15px 0 0;
+      }
+    }
+  }
+}

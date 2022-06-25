@@ -1,0 +1,47 @@
+.details{
+  h2{
+    margin: 12px 0 5px;
+    font-weight: 500;
+  }
+  article{
+    display: flex;
+    margin: 20px 0;
+    .left{
+      white-space: nowrap;
+      margin: 0 20px 0 0;
+      .price{
+        font-size: 30px;
+        padding: 5px 0;
+      }
+      .btn{
+        margin: 10px 0;
+      }
+    }
+    .right{
+      width: 100%;
+      height: 500px;
+      .img-carousel{
+        .img-viewport{
+          .img-cont{
+            .img-bg{
+              cursor: default;
+            }
+          }
+        }
+      }
+    }
+  }
+  p{
+    font-size: 16px;
+    text-align: justify;
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .details{
+    .carousel{
+      height: 63.3vw;
+    }
+  }
+}

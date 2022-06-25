@@ -1,0 +1,26 @@
+1. Delete umages after teleting an item.
+2. Modify images when modifying an item.
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyD_ksvIz1irmnoyUzDQV4v5eJ5Umq0HXvs",
+    authDomain: "olimanauto.firebaseapp.com",
+    projectId: "olimanauto",
+    storageBucket: "olimanauto.appspot.com",
+    messagingSenderId: "743002205569",
+    appId: "1:743002205569:web:cd5caa5027a2797c428c80",
+    measurementId: "G-XZYK9Y56QK"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>

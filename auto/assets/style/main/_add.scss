@@ -1,0 +1,44 @@
+.add{
+  padding-top: 8vh;
+  form{
+    width: 100%;
+    max-width: 800px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    & > *{
+      margin-bottom: 20px;
+    }
+    span{
+      font-size: 20px;
+    }
+    textarea, select, input{
+      padding: 10px;
+    }
+    input[type=file]{
+      display: inline;
+    }
+    textarea{
+      font-family: arial, sans-serif;
+      &.name, &.desc{
+        display: block;
+        width: 100%;
+      }
+      &.desc{
+        height: 100px;
+      }
+    }
+    .category-container{
+      display: flex;
+      align-items: start;
+      flex-wrap: wrap;
+      select{
+        margin: 0 20px 10px 0;
+      }
+    }
+    .btn{
+      margin: 0 auto;
+    }
+  }
+}
